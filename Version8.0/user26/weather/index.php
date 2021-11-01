@@ -38,6 +38,13 @@ body {
     font-family: Helvetica;
     font-size: 0.95em;
     color: #929292;
+    background-color: <?php if($data->main->temp > 50) {
+        echo  'red';
+    }
+    else{
+        echo 'blue';
+    }
+    ?>;
 }
 
 .report-container {
