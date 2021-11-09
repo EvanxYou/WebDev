@@ -117,7 +117,7 @@ else {
     body {
       font-family: arial, sans-serif;
     }
-  </style>
+  </style>3
 </head>
 
 <body>
