@@ -3,7 +3,7 @@
 $curl = curl_init();
 
 curl_setopt_array($curl, [
-	CURLOPT_URL => "https://yh-finance.p.rapidapi.com/market/get-trending-tickers?region=US",
+	CURLOPT_URL => "https://yh-finance.p.rapidapi.com/market/get-popular-watchlists",
 	CURLOPT_RETURNTRANSFER => true,
 	CURLOPT_FOLLOWLOCATION => true,
 	CURLOPT_ENCODING => "",
@@ -22,8 +22,13 @@ $err = curl_error($curl);
 
 curl_close($curl);
 
-if ($err) {
+$data = json_decode($response,true);
+
+ if ($err) {
 	echo "cURL Error #:" . $err;
 } else {
-	echo $response[0]["finance"]['result'][0]['startInterval'];
+	echo 'test' . '<br>';
+	echo $data['finance']['result'][0]['portfolios'][1]['symbolCount'];
+	//echo $response;
+	//print_r($response);
 }
